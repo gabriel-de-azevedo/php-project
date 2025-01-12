@@ -1,6 +1,6 @@
 <?php 
     function dynamicNavigationStyles($currentPage) {
-        return $_SERVER['REQUEST_URI'] === "$currentPage" ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white';
+        return parse_url($_SERVER['REQUEST_URI'])['path'] === "$currentPage" ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white';
     }
 ?>
 
