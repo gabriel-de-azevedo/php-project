@@ -1,6 +1,9 @@
 <?php 
     
-$heading = "About";
-$content = "About Me";
+require 'controllers/database.php';
+
+$pageData = fetchPageData('/about.php');
+$heading = $pageData['heading'];
+$content = $pageData['content'];
 
 require 'layouts/main.layout.php';
