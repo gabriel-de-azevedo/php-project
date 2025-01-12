@@ -1,3 +1,9 @@
+<?php 
+    function dynamicNavigationStyles($currentPage) {
+        return $_SERVER['REQUEST_URI'] === "$currentPage" ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white';
+    }
+?>
+
 <html class="h-full bg-gray-100">
 <head>
     <title>PHP Project</title>
@@ -15,8 +21,8 @@
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/" class="<?=$_SERVER['REQUEST_URI'] === '/' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium">Home</a>
-                <a href="/about.php" class="<?=$_SERVER['REQUEST_URI'] === '/about.php' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
+                <a href="/" class="<?=dynamicNavigationStyles('/') ?> rounded-md px-3 py-2 text-sm font-medium">Home</a>
+                <a href="/about.php" class="<?=dynamicNavigationStyles('/about.php') ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
                 </div>
             </div>
             </div>
