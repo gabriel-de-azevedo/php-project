@@ -1,6 +1,6 @@
 <?php 
     
-require 'controllers/database.php';
+require 'utils/database.php';
 
 $pageData = fetchPageData('/about.php');
 $heading = $pageData['heading'];
